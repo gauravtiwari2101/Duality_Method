@@ -129,21 +129,30 @@
   }
 
   /* ── SECTIONS ── */
-  .section {
-    display: none;
-    position: relative; z-index: 1;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem 80px;
-    animation: fadeSlideUp .4s ease forwards;
-  }
+.section {
+  display: none;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 0 1.5rem 80px;
+  animation: slideFadeIn 0.4s ease forwards;
+}
 
-  .section.active { display: block; }
+.section.active {
+  display: block;
+}
 
-  @keyframes fadeSlideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
   /* ── SECTION HEADER ── */
   .section-header {
