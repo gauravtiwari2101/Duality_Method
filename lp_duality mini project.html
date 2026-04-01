@@ -171,12 +171,15 @@
   .section-header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
 
   /* ── GRID ── */
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
-  @media (max-width: 768px) {
-    .grid-2, .grid-3 { grid-template-columns: 1fr; }
-    .nav-pills { display: none; }
-  }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3 { grid-template-columns: 1fr; }
+  
+  .nav-pills { visibility: hidden; }
+}
 
   /* ── CARD ── */
   .card {
